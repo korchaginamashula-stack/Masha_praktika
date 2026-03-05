@@ -15,7 +15,7 @@
             <nav>
                 <div class="logo">KORCHAGINA MARIA</div>
                 <ul class="menu">
-                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="file:///C:/portfolio/about_me.html">Обо мне</a></li>
                     <li><a href="#design">Дизайн</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
@@ -29,7 +29,7 @@
             <div class="content-wrapper">
                 <div class="photo-block">
                     <!-- Замените ссылку ниже на свое фото или оставьте заглушку -->
-                    <div class="photo-placeholder"><img src="" alt=""></div>
+                    <div class="photo-placeholder"><img src="img/Group 2 (7).png" alt=""></div>
                 </div>
                 <div class="text-block">
                     <h1>Привет, я Мария</h1>
@@ -42,19 +42,55 @@
         </div>
     </section>
 
-    <!-- Страница 2: Хобби (Дизайн) -->
-    <section id="design" class="page-section">
-        <div class="container">
-            <h2>Графический дизайн</h2>
-            <p class="section-desc">Мое творчество и примеры работ</p>
-            
-            <div class="grid">
-                <div class="card">Работа 1</div>
-                <div class="card">Работа 2</div>
-                <div class="card">Работа 3</div>
-                <div class="card">Работа 4</div>
-                <div class="card">Работа 5</div>
-                <div class="card">Работа 6</div>
+        <!-- Страница 2: Хобби (Дизайн) -->
+        <section id="design" class="page-section">
+            <div class="container">
+                <div class="my_projects">
+                    <h2>Графический дизайн</h2>
+                    <p class="section-desc">Мое творчество и примеры работ</p>
+                    
+                    <div class="my_projects_row">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="my_projects_card">
+                                        <img class="card_img" src="img/Group 1321315305.png" alt="">
+                                        <p>карточка товара</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="my_projects_card">
+                                        <img class="card_img" src="img/card2 1.png" alt="">
+                                        <p>карточка товара</p>
+                                    </div>
+                                 </div>
+                                <div class="swiper-slide">
+                                    <div class="my_projects_card">
+                                        <img class="card_img" src="img/card2 1.png" alt="">
+                                        <p>карточка товара</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="my_projects_card">
+                                        <img class="card_img" src="img/card2 1.png" alt="">
+                                        <p>карточка товара</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="my_projects_card">
+                                        <img class="card_img" src="img/Group 1321315305.png" alt="">
+                                        <p>карточка товара</p>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        
+                    
+                </div>
             </div>
         </div>
     </section>
@@ -82,6 +118,27 @@
     <footer>
         <p>&copy; 2023 Все права защищены.</p>
     </footer>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
 </body>
 </html>
