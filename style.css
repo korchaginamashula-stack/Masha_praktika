@@ -121,39 +121,198 @@ nav {
     display: block;
 }
 
-/* --- Страница 2: Дизайн --- */
-h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 10px;
+/* 1. Настройки и переменные (легко менять цвета тут) */
+:root {
+    --bg-color: #ffffff;
+    --text-main: #1a1a1a;
+    --text-secondary: #666666;
+    --accent: #000000;
+    --card-bg: #f9f9f9;
+    --gap: 30px;
+    --radius: 12px;
 }
 
-.section-desc {
-    margin-bottom: 40px;
-    color: var(--gray-dark);
+/* 2. Базовый сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.my_projects_row {
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Контейнер (ограничивает ширину) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 4. Шапка */
+.header {
+    
+}
+
+.header-content {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
 }
 
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    margin-left: 20px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+/* 5. Приветствие */
+.intro {
+    padding: 80px 0 60px;
+    text-align: left;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+/* 6. Сетка галереи (Самое важное) */
+.gallery {
+    display: grid;
+    /* Автоматическое заполнение: минимум 350px, иначе перенос */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--gap);
+    padding-bottom: 100px;
+}
+
+/* 7. Карточка работы */
 .card {
-    aspect-ratio: 1 / 1;
-    background-color: var(--gray-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gray-dark);
-    font-size: 0.9rem;
-    transition: 0.3s;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
 }
 
 .card:hover {
-    background-color: #ffffff;
-    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.card-image {
+    aspect-ratio: 4/5; /* Вертикальный формат фото */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05); /* Легкое увеличение фото */
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-info span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 8. Подвал */
+.footer {
+    background: var(--card-bg);
+    padding: 80px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    margin-top: 60px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* 9. Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 2.2rem;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr; /* Одна колонка на телефоне */
+        gap: 40px;
+    }
+
+    .card-image {
+        aspect-ratio: 3/2; /* Более горизонтальные фото на телефоне */
+    }
 }
 
 /* --- Страница 3: Контакты --- */
